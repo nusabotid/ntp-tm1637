@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "author": "Adam Damara",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 9.6, "left": 4.84, "attrs": {} },
+    {
+      "type": "wokwi-tm1637-7segment",
+      "id": "sevseg1",
+      "top": -0.04,
+      "left": -194.57,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "sevseg1:VCC", "esp:5V", "red", [ "h9.6", "v153.6" ] ],
+    [ "sevseg1:GND", "esp:GND.1", "black", [ "h19.2", "v96" ] ],
+    [ "sevseg1:CLK", "esp:18", "green", [ "h28.8", "v-28.8", "h134.4", "v153.6" ] ],
+    [ "sevseg1:DIO", "esp:19", "green", [ "h19.2", "v-48", "h124.8", "v86.4" ] ]
+  ],
+  "dependencies": {}
+}
